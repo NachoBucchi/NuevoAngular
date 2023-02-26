@@ -1,0 +1,114 @@
+<code
+  >Last update: <b>{{ update | date : "dd-MM-yyyy, HH:mm" }}</b></code
+>
+<br />
+<br />
+<h2 class="team-name">
+  Team: <b>{{ name | uppercase }}</b>
+</h2>
+<mat-divider></mat-divider>
+<code
+  >Number of members: <b> {{ members | number }} </b></code
+>
+<br />
+<code
+  >Budget: <b>{{ budget | currency }}</b></code
+>
+<br />
+
+<code
+  >Effectivity: <b>{{ effectivity | percent }}</b></code
+>
+<mat-divider class="divider"></mat-divider>
+
+<mat-grid-list
+  cols="1"
+  rowHeight="fit"
+  [style.height]="'150px'"
+  [gutterSize]="'1px'"
+>
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <h1 style="letter-spacing: 3px; text-align: center; margin: 40px 0px">
+      <b>Players</b>
+    </h1></mat-grid-tile
+  >
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-form-field class="search-input">
+      <input
+        matInput
+        type="search"
+        placeholder="Search for player..."
+        [(ngModel)]="search"
+      />
+      <button mat-button matPrefix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field></mat-grid-tile
+  >
+</mat-grid-list>
+<div>
+  <mat-grid-list
+    cols="5"
+    rowHeight="400"
+    *ngIf="players.length > 0; else noData"
+  >
+    <mat-grid-tile rowspan="2">
+      <mat-accordion class="players-headers">
+        <mat-expansion-panel
+          hideToggle="true"
+          *ngFor="let p of players | filterPerLetter : search; let i = index"
+          [expanded]="step === i"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ p.name }}
+            </mat-panel-title>
+            <mat-panel-description>
+              <div class="position">
+                {{ p.position }}
+              </div>
+              <mat-icon class="avatar">account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-divider></mat-divider>
+          <p>Age: {{ p.age }}</p>
+          <p>Nickname: {{ p.nickname }}</p>
+
+          <p *ngIf="p.status" [ngStyle]="{ color: getColor(p.status) }">
+            Status: Active
+          </p>
+          <p *ngIf="!p.status" [ngStyle]="{ color: getColor(p.status) }">
+            Status: No Active
+          </p>
+
+          <button
+            *ngIf="!p.status"
+            mat-raised-button
+            color="primary"
+            (click)="activatePlayer(p)"
+          >
+            Activar
+          </button>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-grid-tile>
+    <mat-grid-tile
+      class="players"
+      *ngFor="let p of players | filterPerLetter : search; let i = index"
+    >
+      <app-jugadores
+        [ngClass]="{ noActivePlayer: !p.status, activePlayer: p.status }"
+        [player]="p"
+        [team]="name"
+        (onActivate)="updateStatus(p, i, $event)"
+        (click)="showData(i)"
+      ></app-jugadores>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <ng-template #noData>
+    <div class="mat-elevation-z8 noData">
+      <h2>There is no data available.</h2>
+    </div>
+  </ng-template>
+</div>

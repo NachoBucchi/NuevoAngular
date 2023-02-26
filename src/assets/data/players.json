@@ -1,0 +1,66 @@
+[{
+  "name": "Sergio",
+  "age": "35",
+  "nickname": "Felino",
+  "picture": "imagen.jpg",
+  "position": "Foward",
+  "status": true
+},
+{
+  "name": "Manuel",
+  "age": "25",
+  "nickname": "Lolo",
+  "picture": "imagen.jpg",
+  "position": "Foward",
+  "status": true
+},
+{
+  "name": "Hugo",
+  "age": "25",
+  "nickname": "Sheriff",
+  "picture": "imagen.jpg",
+  "position": "Foward",
+  "status": true
+},
+{
+  "name": "Paco",
+  "age": "22",
+  "nickname": "dragon",
+  "picture": "imagen.jpg",
+  "position": "Middle",
+  "status": true
+},
+{
+  "name": "Luis",
+  "age": "22",
+  "nickname": "duck",
+  "picture": "imagen.jpg",
+  "position": "Defense",
+  "status": true
+},
+{
+  "name": "Ernesto",
+  "age": "28",
+  "nickname": "stone",
+  "picture": "imagen.jpg",
+  "position": "Defense",
+  "status": true
+},
+{
+  "name": "Juan",
+  "age": "20",
+  "nickname": "gacela",
+  "picture": "imagen.jpg",
+  "position": "Rightback",
+  "status": true
+},
+{
+  "name": "Jose",
+  "age": "40",
+  "nickname": "compa",
+  "picture": "imagen.jpg",
+  "position": "Leftback",
+  "status": true
+}
+
+]

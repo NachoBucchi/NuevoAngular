@@ -1,0 +1,102 @@
+* {
+  font-family: system-ui !important;
+}
+
+.players-headers-align .mat-expansion-panel-header-title,
+.players-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.players-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+:host ::ng-deep .mat-grid-tile .mat-figure {
+  align-items: unset !important;
+  padding: 20px;
+}
+
+mat-grid-list {
+  margin-right: 3%;
+}
+
+.player-list {
+  overflow: scroll;
+}
+
+mat-divider {
+  margin-bottom: 15px;
+}
+
+.divider {
+  margin-top: 10px;
+}
+
+mat-accordion.mat-accordion.players-headers {
+  width: 250px;
+}
+
+.position {
+  position: absolute;
+  left: 43%;
+}
+
+.mat-icon {
+  position: absolute;
+  right: 10%;
+  font-family: 'Material Icons' !important;
+}
+
+.noActivePlayer {
+  animation: fadeOut 2s;
+  animation-fill-mode: both;
+}
+
+.activePlayer {
+  animation: fadeIn 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.noData {
+  text-align: center;
+  padding: 15px;
+  padding-top: 25px;
+  color: #673ab7;
+}
+
+.grid-title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.search-input {
+  display: flex;
+  width: 60%;
+}
+
+.players {
+  margin-bottom: 40px;
+}
+
+
+
