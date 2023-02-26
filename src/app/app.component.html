@@ -1,11 +1,12 @@
 <mat-toolbar color="primary" class="main-menu mat-elevation-z8">
   <span>Liga Deportiva</span>
   <div class="botones">
-    <button mat-stroked-button>Juegos</button>
-    <button mat-stroked-button>Equipos</button>
-    <button mat-stroked-button>Jugadores</button>
+    <button mat-stroked-button routerLink="game">Juegos</button>
+    <button mat-stroked-button routerLink="teams">Equipos</button>
+    <button mat-stroked-button routerLink="players">Jugadores</button>
   </div>
 </mat-toolbar>
 
-<div class="container"><app-equipos></app-equipos></div>
-
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

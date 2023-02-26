@@ -2,12 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from "../../_interfaces/player.interface";
 
 @Component({
-  selector: 'app-jugadores',
-  templateUrl: './jugadores.component.html',
-  styleUrls: ['./jugadores.component.scss']
+  selector: 'app-players',
+  templateUrl: './players.component.html',
+  styleUrls: ['./players.component.scss']
 })
 
-export class JugadoresComponent {
+export class PlayersComponent {
 
 
 

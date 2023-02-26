@@ -96,13 +96,13 @@
       class="players"
       *ngFor="let p of players | filterPerLetter : search; let i = index"
     >
-      <app-jugadores
+      <app-players
         [ngClass]="{ noActivePlayer: !p.status, activePlayer: p.status }"
         [player]="p"
         [team]="name"
         (onActivate)="updateStatus(p, i, $event)"
         (click)="showData(i)"
-      ></app-jugadores>
+      ></app-players>
     </mat-grid-tile>
   </mat-grid-list>
 

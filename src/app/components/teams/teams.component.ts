@@ -6,11 +6,11 @@ import TEAMS from '../../../assets/data/teams.json';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-equipos',
-  templateUrl: './equipos.component.html',
-  styleUrls: ['./equipos.component.scss'],
+  selector: 'app-teams',
+  templateUrl: './teams.component.html',
+  styleUrls: ['./teams.component.scss'],
 })
-export class EquiposComponent implements OnInit {
+export class TeamsComponent implements OnInit {
   name: string = 'Bokita';
   status: boolean = false;
   // player:string = "Sergio";
@@ -33,8 +33,9 @@ export class EquiposComponent implements OnInit {
   members = 50000;
   effectivity = 0.8464;
   search = '';
-
   update = new Date();
+
+  isLoading = false;
 
   constructor(private http: HttpClient) {}
 
@@ -48,10 +49,16 @@ export class EquiposComponent implements OnInit {
   }
 
   // getPlayers(){
+  //   this.isLoading = true
   //   this.http.get()
   //   .subscribe((jugadores:jugador[]) => {
   //     console.log(jugadores)
   //     this.jugadores = jugadores;
+
+  //     this.isLoading = false;
+
+  //   }, error => {
+  //     console.log(error)
   //   })
   // }
 

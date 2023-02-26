@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// Pipes
-import { FilterPerLetterPipe } from './_pipes/filter-per-letter.pipe';
 
 // Angular Material Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,19 +18,24 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+// Pipes
+import { FilterPerLetterPipe } from './_pipes/filter-per-letter.pipe';
+
 // Components
-import { JuegoComponent } from './components/juego/juego.component';
-import { EquiposComponent } from './components/equipos/equipos.component';
-import { JugadoresComponent } from './components/jugadores/jugadores.component';
+import { GameComponent } from './components/game/game.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { PlayersComponent } from './components/players/players.component';
 import { LoginComponent } from './components/login/login.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    JuegoComponent,
-    EquiposComponent,
-    JugadoresComponent,
+    GameComponent,
+    TeamsComponent,
+    PlayersComponent,
     LoginComponent,
     FilterPerLetterPipe,
   ],
